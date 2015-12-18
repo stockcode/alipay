@@ -117,7 +117,7 @@ module Alipay
 
       r = Net::HTTP.get(request_uri(params, options))
 
-      Hash.from_xml(r)['alipay']
+      Alipay::Result.new Hash.from_xml(r)
     end
 
     CREATE_FOREX_SINGLE_REFUND_URL_REQUIRED_PARAMS = %w( out_return_no out_trade_no return_amount currency reason )
