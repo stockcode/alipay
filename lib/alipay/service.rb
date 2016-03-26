@@ -94,10 +94,10 @@ module Alipay
       request_uri(params, options).to_s
     end
 
-    CREATE_REFUND_URL_REQUIRED_PARAMS = %w( batch_no data notify_url )
+    CREATE_REFUND_NOPWD_URL_REQUIRED_PARAMS = %w( batch_no data notify_url )
     def self.refund_fastpay_by_platform_nopwd(params, options = {})
       params = Utils.stringify_keys(params)
-      check_required_params(params, CREATE_REFUND_URL_REQUIRED_PARAMS)
+      check_required_params(params, CREATE_REFUND_NOPWD_URL_REQUIRED_PARAMS)
 
       data = params.delete('data')
       detail_data = data.map do|item|
